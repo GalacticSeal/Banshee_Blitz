@@ -22,7 +22,6 @@ public class CandleItem : MonoBehaviour
     {
         startPos = transform.position;
     }
-
     
     void Update()
     {
@@ -33,7 +32,13 @@ public class CandleItem : MonoBehaviour
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position+centered, playerPos.position, out hit, 0.7f)) {
-            Destroy(gameObject);
+            if(hit.collider.GetComponent<PlayerMovement>() != null) {
+                Collect();
+            }
         }
+    }
+
+    public void Collect() {
+        Destroy(gameObject);
     }
 }

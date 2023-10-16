@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController CC;
+    public CandleSpawner Candles;
 
     public float moveSpeed = 12.0f;
 
@@ -32,5 +33,12 @@ public class PlayerMovement : MonoBehaviour
         CC.enabled = false;
         transform.position = spawnPos;
         CC.enabled = true;
+        Candles.SpawnCandles();
+    }
+
+    private void OnTriggerEnter(Collider collider) {
+        if(collider.GetComponent<CandleItem>() != null) {
+            collider.GetComponent<CandleItem>().Collect();
+        }
     }
 }

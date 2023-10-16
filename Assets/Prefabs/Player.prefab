@@ -451,6 +451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d836f05645e68469d27e9b2345b684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Candles: {fileID: 5679118236184566420, guid: 97786f75622a5274786d38cb20d9b4cb, type: 3}
+  moveSpeed: 12
   spawnPos: {x: 0, y: 0, z: 0}
   startPos: {x: 0, y: 0, z: 0}
 --- !u!114 &7602630255129986251
